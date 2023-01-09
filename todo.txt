@@ -1,0 +1,9 @@
+- get source directory
+- get destination directory 
+- check source and destination directory exist 
+- get files to copy 
+- summary files, size and confirm copy FROM TO 
+- create main directory in source path 
+- copy all directories and files 
+- log every action (create directory, copy file) 
+- display summary at the end 

@@ -6,8 +6,12 @@ public class Directory extends Element {
 
     private List<Directory> subdirectories;
 
-    private List<File> files;
+    private List<FileData> files;
 
+
+    public Directory(String name, String path) {
+        super(name, path);
+    }
 
     public List<Directory> getSubdirectories() {
         return subdirectories;
@@ -17,11 +21,11 @@ public class Directory extends Element {
         this.subdirectories = subdirectories;
     }
 
-    public List<File> getFiles() {
+    public List<FileData> getFiles() {
         return files;
     }
 
-    public void setFiles(List<File> files) {
+    public void setFiles(List<FileData> files) {
         this.files = files;
     }
 }

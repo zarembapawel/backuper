@@ -7,6 +7,11 @@ public abstract class Element {
     private String path;
 
 
+    public Element(String name, String path) {
+        this.name = name;
+        this.path = path;
+    }
+
     public String getName() {
         return name;
     }

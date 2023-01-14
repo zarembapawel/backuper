@@ -1,9 +1,13 @@
 package pl.zarembapawel.backuper.model;
 
-public class File extends Element {
+public class FileData extends Element {
 
     private Long size;
 
+
+    public FileData(String name, String path) {
+        super(name, path);
+    }
 
     public Long getSize() {
         return size;

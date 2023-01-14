@@ -1,18 +1,22 @@
 package pl.zarembapawel.backuper;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import pl.zarembapawel.backuper.service.BackuperService;
 
 @SpringBootApplication
 public class BackuperApplication {
 
-	static Logger logger = LoggerFactory.getLogger(BackuperApplication.class);
+	private static BackuperService backuperService;
 
-	public static void main(String[] args) {
-		logger.info("Hello");
-		SpringApplication.run(BackuperApplication.class, args);
+	@Autowired
+	public BackuperApplication(BackuperService backuperService) {
+		BackuperApplication.backuperService = backuperService;
 	}
 
+	public static void main(String[] args) {
+		SpringApplication.run(BackuperApplication.class, args);
+		backuperService.runAction();
+	}
 }

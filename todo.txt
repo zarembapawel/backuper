@@ -6,4 +6,5 @@
 - create main directory in source path 
 - copy all directories and files 
 - log every action (create directory, copy file) 
-- display summary at the end 
+- display summary at the end
+- option to copy only one file

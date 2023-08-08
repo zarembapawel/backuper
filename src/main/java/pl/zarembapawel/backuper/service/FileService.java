@@ -30,7 +30,10 @@ public class FileService {
             try {
                 if(file.isDirectory()) {
                     logger.info("Adding directory: {} -> {}", file.getName(), file.getPath());
-                    subdirectories.add(new Directory(file.getName(), file.getPath()));
+                    Directory subdirectory = new Directory(file.getName(), file.getPath());
+                    subdirectory.setSubdirectories(getSubdirectories(new File(file.getPath())));
+                    subdirectory.setFiles(getFiles(new File(file.getPath())));
+                    subdirectories.add(subdirectory);
                 }
             } catch (NullPointerException e) {
                 logger.error("Error during reading directory form path {}", root.getPath());
